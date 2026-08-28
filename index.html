@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RNC EXOS Tournament</title>
 
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#0b0b0b;
+    color:white;
+}
+header{
+    background:#ffd700;
+    color:#000;
+    padding:25px 15px;
+    text-align:center;
+}
+header h1{
+    margin:0;
+    font-size:32px;
+}
+header p{
+    margin:8px 0 0;
+}
+.container{
+    max-width:700px;
+    margin:auto;
+    padding:20px;
+}
+.card{
+    background:#171717;
+    border:1px solid #333;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+}
+h2{
+    color:#ffd700;
+}
+button{
+    background:#ffd700;
+    color:#000;
+    border:0;
+    padding:13px 20px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+input{
+    width:100%;
+    box-sizing:border-box;
+    padding:13px;
+    margin:7px 0;
+    border-radius:7px;
+    border:1px solid #555;
+    background:#222;
+    color:white;
+}
+footer{
+    text-align:center;
+    padding:20px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>RNC EXOS</h1>
+    <p>Gaming Tournament</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+    <h2>🏆 Tournament</h2>
+    <p>Join the tournament and show your skills!</p>
+    <button onclick="showForm()">Register Now</button>
+</div>
+
+<div class="card" id="form" style="display:none;">
+    <h2>📝 Registration</h2>
+
+    <input type="text" id="name" placeholder="Player Name">
+    <input type="text" id="uid" placeholder="Game UID">
+    <input type="text" id="phone" placeholder="Contact Number">
+
+    <button onclick="register()">Submit Registration</button>
+
+    <p id="message"></p>
+</div>
+
+<div class="card">
+    <h2>📊 Live Scoreboard</h2>
+    <p>Coming Soon...</p>
+</div>
+
+<div class="card">
+    <h2>💳 Entry Fee</h2>
+    <p>Payment details will be added soon.</p>
+</div>
+
+</div>
+
+<footer>
+    © 2026 RNC EXOS
+</footer>
+
+<script>
+function showForm(){
+    document.getElementById("form").style.display="block";
+}
+
+function register(){
+    let name=document.getElementById("name").value;
+    let uid=document.getElementById("uid").value;
+    let phone=document.getElementById("phone").value;
+
+    if(name==="" || uid==="" || phone===""){
+        document.getElementById("message").innerText="Please fill all details.";
+        return;
+    }
+
+    document.getElementById("message").innerText=
+    "Registration submitted successfully!";
+}
+</script>
+
+</body>
+</html>
